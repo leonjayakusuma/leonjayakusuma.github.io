@@ -15,14 +15,14 @@ export default function Skills() {
     },
     {
       title: 'Backend',
-      skills: ['Node.js', 'Express', 'MongoDB', 'PostgreSQL', 'Docker', 'Firebase', 'Supabase', 'AWS', 'Azure', 'GCP', 'Prisma'].map(name => ({
+      skills: ['Node.js', 'Express', 'MongoDB', 'PostgreSQL', 'Firebase', 'Supabase', 'AWS', 'Azure', 'GCP', 'Prisma'].map(name => ({
         name,
         icon: getSkillIcon(name)
       }))
     },
     {
       title: 'Tools',
-      skills: ['Git & GitHub', 'Vite', 'VS Code', 'CI/CD'].map(name => ({
+      skills: ['Git & GitHub', 'Vite', 'VS Code', 'CI/CD', 'Docker'].map(name => ({
         name,
         icon: getSkillIcon(name)
       }))
