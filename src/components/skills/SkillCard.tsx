@@ -6,7 +6,7 @@ interface Skill {
     icon: React.ReactElement | null
 }
 
-export default function SkillCard(skill: Skill) {
+export default function SkillCard({skill}: {skill: Skill}) {
     return <Card
       key={skill.name}
       sx={{

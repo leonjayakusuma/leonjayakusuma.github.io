@@ -66,8 +66,8 @@ export default function Skills() {
                       justifyContent: 'flex-start',
                     }}
                   >
-                    {category.skills.map((skill) => (
-                      SkillCard(skill)
+                    {category.skills.map((skill: Skill) => (
+                      <SkillCard key={skill.name} skill={skill} />
                     ))}
                   </Box>
                 </CardContent>
