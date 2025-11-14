@@ -1,17 +1,8 @@
-import { Container, Box, Typography, Card, CardContent, Grid } from '@mui/material'
+import { Container, Box, Typography, Grid } from '@mui/material'
 import { useMemo } from 'react'
 import { getSkillIcon } from '../../utils/skillIcons'
-import SkillCard from './SkillCard'
-
-interface Skill {
-  name: string
-  icon: React.ReactElement | null
-}
-
-interface SkillCategory {
-  title: string
-  skills: Skill[]
-}
+import type { SkillCategory } from './interface'
+import SkillCategoryCard from './SkillCategoryCard'
 
 export default function Skills() {
   const skillCategories: SkillCategory[] = useMemo(() => [
@@ -52,27 +43,7 @@ export default function Skills() {
         </Typography>
         <Grid container spacing={3}>
           {skillCategories.map((category) => (
-            <Grid size={{ xs: 12, md: 4 }} key={category.title}>
-              <Card sx={{ height: '100%' }}>
-                <CardContent>
-                  <Typography variant="h5" component="h3" sx={{ mb: 3, fontWeight: 600 }}>
-                    {category.title}
-                  </Typography>
-                  <Box
-                    sx={{
-                      display: 'flex',
-                      flexWrap: 'wrap',
-                      gap: 2,
-                      justifyContent: 'flex-start',
-                    }}
-                  >
-                    {category.skills.map((skill: Skill) => (
-                      <SkillCard key={skill.name} skill={skill} />
-                    ))}
-                  </Box>
-                </CardContent>
-              </Card>
-            </Grid>
+            <SkillCategoryCard key={category.title} category={category} />
           ))}
         </Grid>
       </Container>
