@@ -152,7 +152,7 @@ function App() {
             Skills & Technologies
           </Typography>
           <Grid container spacing={3}>
-            <Grid item xs={12} md={4}>
+            <Grid size={{ xs: 12, md: 4 }}>
               <Card>
                 <CardContent>
                   <Typography variant="h5" component="h3" sx={{ mb: 2, fontWeight: 600 }}>
@@ -167,7 +167,7 @@ function App() {
                 </CardContent>
               </Card>
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid size={{ xs: 12, md: 4 }}>
               <Card>
                 <CardContent>
                   <Typography variant="h5" component="h3" sx={{ mb: 2, fontWeight: 600 }}>
@@ -182,7 +182,7 @@ function App() {
                 </CardContent>
               </Card>
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid size={{ xs: 12, md: 4 }}>
               <Card>
                 <CardContent>
                   <Typography variant="h5" component="h3" sx={{ mb: 2, fontWeight: 600 }}>
@@ -209,7 +209,7 @@ function App() {
           </Typography>
           <Grid container spacing={4}>
             {[1, 2, 3].map((num) => (
-              <Grid item xs={12} sm={6} md={4} key={num}>
+              <Grid size={{ xs: 12, sm: 6, md: 4 }} key={num}>
                 <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
                   <Box 
                     sx={{ 
