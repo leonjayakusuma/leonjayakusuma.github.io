@@ -26,14 +26,14 @@ export default function Skills() {
         name,
         icon: getSkillIcon(name)
       }))
-    },
-    {
-      title: 'Deep Learning',
-      skills: ['Python', 'TensorFlow', 'PyTorch', 'Keras', 'NumPy', 'Pandas', 'Matplotlib', 'Seaborn', 'Scikit-learn', 'SciPy'].map(name => ({
-        name,
-        icon: getSkillIcon(name)
-      }))
     }
+    // {
+    //   title: 'Deep Learning',
+    //   skills: ['Python', 'TensorFlow', 'PyTorch', 'Keras', 'NumPy', 'Pandas', 'Matplotlib', 'Seaborn', 'Scikit-learn', 'SciPy'].map(name => ({
+    //     name,
+    //     icon: getSkillIcon(name)
+    //   }))
+    // }
   ], [])
   return (
     <Box id="skills" component="section" sx={{ py: 10, px: { xs: 2, sm: 3 }, bgcolor: 'background.paper' }}>

@@ -1,27 +1,27 @@
 import { Box, Card, CardContent, Typography } from "@mui/material";
 import SkillIcon from "../icons/SkillIcon";
+import type { SkillCardProps } from "./interface";
 
-interface Skill {
-    name: string
-    icon: React.ReactElement | null
-}
 
-export default function SkillCard({skill}: {skill: Skill}) {
+
+export default function SkillCard({skill}: SkillCardProps) {
     return <Card
       key={skill.name}
       sx={{
-        width: { xs: 'calc(50% - 8px)', sm: '120px' },
-        height: { xs: '120px', sm: '120px' },
+        width: { xs: 'calc(50% - 8px)', sm: 'calc(33.333% - 12px)' },
+        maxWidth: '140px',
+        height: 120,
         minWidth: '100px',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: 2,
+        p: 2,
         cursor: 'pointer',
         transition: 'all 0.3s ease-in-out',
         position: 'relative',
         overflow: 'hidden',
+        padding: 2,
         '&:hover': {
           transform: 'translateY(-8px) scale(1.05)',
           boxShadow: '0 12px 24px rgba(99, 102, 241, 0.3)',
