@@ -8,15 +8,19 @@ interface SkillCategory {
 const skillCategories: SkillCategory[] = [
   {
     title: 'Frontend',
-    skills: ['React', 'TypeScript', 'HTML/CSS', 'JavaScript']
+    skills: ['Figma','React', 'TypeScript', 'TailwindCSS', 'Vite', 'Svelte']
   },
   {
     title: 'Backend',
-    skills: ['Node.js', 'RESTful APIs', 'Database Design', 'Server Management']
+    skills: ['Node.js', 'Express', 'MongoDB', 'PostgreSQL', 'Docker', 'Firebase', 'Supabase', 'AWS', 'Azure', 'GCP', 'Prisma']
   },
   {
     title: 'Tools',
     skills: ['Git & GitHub', 'Vite', 'VS Code', 'CI/CD']
+  },
+  {
+    title: 'Deep Learning',
+    skills: ['Python', 'TensorFlow', 'PyTorch', 'Keras', 'NumPy', 'Pandas', 'Matplotlib', 'Seaborn', 'Scikit-learn', 'SciPy']
   }
 ]
 
