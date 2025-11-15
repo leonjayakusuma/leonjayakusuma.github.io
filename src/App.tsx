@@ -12,9 +12,9 @@ function App() {
     <Box sx={{ minHeight: '100vh', bgcolor: 'background.default' }}>
       <Navbar />
       <Hero />
-      <About />
-      <Skills />
       <Projects />
+      <Skills />
+      <About />
       <Contact />
       <Footer />
     </Box>
