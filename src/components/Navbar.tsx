@@ -32,11 +32,11 @@ export default function Navbar() {
               <NavLinkSeparator />
               {NavLink({ href: '#home', text: 'Home' })}
               <NavLinkSeparator />
-              {NavLink({ href: '#about', text: 'About' })}
+              {NavLink({ href: '#projects', text: 'Projects' })}
               <NavLinkSeparator />
               {NavLink({ href: '#skills', text: 'Skills' })}
               <NavLinkSeparator />
-              {NavLink({ href: '#projects', text: 'Projects' })}
+              {NavLink({ href: '#about', text: 'About' })}
               <NavLinkSeparator />
               {NavLink({ href: '#contact', text: 'Contact' })}
               <NavLinkSeparator />
