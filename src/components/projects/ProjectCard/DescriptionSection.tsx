@@ -1,5 +1,5 @@
 import { Box, Chip, Grid, Typography } from "@mui/material";
-import type { Project } from "./interface";
+import type { Project } from "../interface";
 
 export default function DescriptionSection({ project }: { project: Project }) {
     return (

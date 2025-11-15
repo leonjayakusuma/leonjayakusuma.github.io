@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material"
 import ImageSection from "./ImageSection"
 import DescriptionSection from "./DescriptionSection"
-import type { Project } from "./interface"
+import type { Project } from "../interface"
 import { useEffect, useRef, useState } from "react"
 
 function useScrollVisibility<T extends HTMLElement = HTMLElement>(threshold = 0.1) {
