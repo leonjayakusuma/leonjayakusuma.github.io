@@ -120,7 +120,7 @@ const cursorStyles = {
 const buttonContainerStyles = {
   display: 'flex',
   flexDirection: { xs: 'column', sm: 'row' },
-  gap: 2,
+  gap: 6,
   justifyContent: 'center'
 }
 
@@ -158,7 +158,13 @@ function ActionButtons() {
           px: 4,
           py: 1.5,
           boxShadow: 3,
-          '&:hover': { boxShadow: 6 }
+          fontSize: { xs: '1rem', sm: '1.25rem' },
+          '&:hover': { boxShadow: 6, 
+            bgcolor: 'rgba(255, 255, 255, 1)',
+            color: 'primary.main',
+            transform: 'scale(1.1)',
+            transition: 'transform 0.3s ease',
+          }
         }}
       >
         Get In Touch
@@ -171,7 +177,16 @@ function ActionButtons() {
           px: 4,
           py: 1.5,
           borderWidth: 2,
-          '&:hover': { borderWidth: 2, bgcolor: 'rgba(99, 102, 241, 0.1)' }
+          fontSize: { xs: '1rem', sm: '1.25rem' },
+          '&:hover': { 
+            borderWidth: 4, 
+            bgcolor: 'rgba(255, 255, 255, 0.1)',
+            borderColor: 'rgba(255, 255, 255, 1)',
+            boxShadow: 6,
+            color: 'rgba(255, 255, 255, 1)',
+            transform: 'scale(1.1)',
+            transition: 'transform 0.3s ease',
+          }
         }}
       >
         View My Work
