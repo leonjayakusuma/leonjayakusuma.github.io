@@ -43,7 +43,21 @@ export default function Navbar() {
 
 
 function NavLink({ href, text }: { href: string, text: string }) {
-  return <Link href={href} sx={{ textDecoration: 'none', color: 'text.primary', '&:hover': { color: 'primary.main' }, fontSize: '1.25rem', fontWeight: 700 }}>
+  return <Link href={href} sx={{ 
+    textDecoration: 'none',
+    color: 'text.primary',
+    '&:hover': { 
+      color: 'primary.main',
+      transform: 'scale(1.1)',
+      transition: 'transform 0.3s ease',
+      backgroundColor: 'rgba(255, 255, 255, 1)',
+    },
+    fontSize: '1.25rem',
+    fontWeight: 700,
+    transition: 'color 0.3s ease',
+    padding: '10px 20px',
+    borderRadius: '5px',
+  }}>
     {text}
   </Link>
 }
