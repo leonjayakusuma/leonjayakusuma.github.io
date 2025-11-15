@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, Container, Link, useScrollTrigger, Slide } from '@mui/material'
+import { AppBar, Toolbar, Container, Link, useScrollTrigger, Slide, Box } from '@mui/material'
 
 function HideOnScroll({ children }: { children: React.ReactElement }) {
   const trigger = useScrollTrigger()
@@ -24,16 +24,22 @@ export default function Navbar() {
         <Toolbar>
           <Container maxWidth="lg" sx={{
             display: 'flex',
-            justifyContent: 'center',
+            justifyContent: 'space-between',
             alignItems: 'center',
             width: '100%',
             gap: 6,
           }}>
+              <NavLinkSeparator />
               {NavLink({ href: '#home', text: 'Home' })}
+              <NavLinkSeparator />
               {NavLink({ href: '#about', text: 'About' })}
+              <NavLinkSeparator />
               {NavLink({ href: '#skills', text: 'Skills' })}
+              <NavLinkSeparator />
               {NavLink({ href: '#projects', text: 'Projects' })}
+              <NavLinkSeparator />
               {NavLink({ href: '#contact', text: 'Contact' })}
+              <NavLinkSeparator />
           </Container>
         </Toolbar>
       </AppBar>
@@ -41,6 +47,16 @@ export default function Navbar() {
   )
 }
 
+function NavLinkSeparator() {
+  return <Box
+    sx={{
+      width: '1px',
+      height: '24px',
+      bgcolor: 'white',
+      opacity: 0.5,
+    }}
+  />
+}
 
 function NavLink({ href, text }: { href: string, text: string }) {
   return <Link href={href} sx={{ 
