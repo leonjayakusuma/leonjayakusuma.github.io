@@ -1,6 +1,9 @@
 import { Container, Box, Typography } from '@mui/material'
 import AnimatedHeading from '../utils/AnimatedHeading'
 
+const aboutText = "I'm a passionate developer who loves creating innovative solutions and bringing ideas to life through code. With a strong foundation in modern web technologies, I enjoy building user-friendly applications that make a difference."
+const aboutText2 = "When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community."
+
 export default function About() {
   return (
     <Box id="about" component="section" sx={{ py: 10, px: { xs: 2, sm: 3 } }}>
@@ -9,19 +12,17 @@ export default function About() {
           {AnimatedHeading({content: 'About Me'})}
         </Box>
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
-          <Typography variant="body1" sx={{ fontSize: '1.5rem', lineHeight: 1.8, color: 'text.secondary' }}>
-            I'm a passionate developer who loves creating innovative solutions and 
-            bringing ideas to life through code. With a strong foundation in modern 
-            web technologies, I enjoy building user-friendly applications that make 
-            a difference.
-          </Typography>
-          <Typography variant="body1" sx={{ fontSize: '1.5rem', lineHeight: 1.8, color: 'text.secondary' }}>
-            When I'm not coding, you can find me exploring new technologies, contributing 
-            to open-source projects, or sharing knowledge with the developer community.
-          </Typography>
+          {AboutParagraph({text: aboutText})}
+          {AboutParagraph({text: aboutText2})}
         </Box>
       </Container>
     </Box>
   )
+}
+
+function AboutParagraph({text}: {text: string}) {
+  return <Typography variant="body1" sx={{ fontSize: '1.5rem', lineHeight: 1.8, color: 'text.secondary' }}>
+    {text}
+  </Typography>
 }
 
