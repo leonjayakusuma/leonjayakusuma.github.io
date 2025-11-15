@@ -10,7 +10,7 @@ export default function AnimatedHeading({content}: {content: string}) {
           display: 'inline-block',
           px: 3,
           py: 1,
-          borderRadius: '5px',
+          borderRadius: '1rem',
           transition: 'all 0.3s ease',
           '&:hover': {
             color: 'primary.main',
