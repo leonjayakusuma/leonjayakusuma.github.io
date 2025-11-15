@@ -4,9 +4,28 @@ export default function About() {
   return (
     <Box id="about" component="section" sx={{ py: 10, px: { xs: 2, sm: 3 } }}>
       <Container maxWidth="md">
-        <Typography variant="h2" component="h2" sx={{ textAlign: 'center', mb: 6, fontWeight: 700 }}>
-          About Me
-        </Typography>
+        <Box sx={{ textAlign: 'center', mb: 6 }}>
+          <Typography 
+            variant="h2"
+            component="h2"
+            sx={{ 
+              fontWeight: 700,
+              display: 'inline-block',
+              px: 3,
+              py: 1,
+              borderRadius: '5px',
+              transition: 'all 0.3s ease',
+              '&:hover': {
+                color: 'primary.main',
+                transform: 'scale(1.1)',
+                cursor: 'pointer',
+                backgroundColor: 'rgba(255, 255, 255, 1)',
+              }
+            }}
+          >
+            About Me
+          </Typography>
+        </Box>
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
           <Typography variant="body1" sx={{ fontSize: '1.125rem', lineHeight: 1.8, color: 'text.secondary' }}>
             I'm a passionate developer who loves creating innovative solutions and 

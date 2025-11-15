@@ -1,4 +1,5 @@
 import { Container, Box, Typography, Card, CardContent, Grid, Link } from '@mui/material'
+import AnimatedHeading from '../utils/AnimatedHeading'
 
 interface Project {
   id: number
@@ -36,9 +37,7 @@ export default function Projects() {
   return (
     <Box id="projects" component="section" sx={{ py: 10, px: { xs: 2, sm: 3 } }}>
       <Container maxWidth="lg">
-        <Typography variant="h2" component="h2" sx={{ textAlign: 'center', mb: 6, fontWeight: 700 }}>
-          Featured Projects
-        </Typography>
+        {AnimatedHeading({content: 'Featured Projects'})}
         <Grid container spacing={4}>
           {projects.map((project) => (
             <Grid size={{ xs: 12, sm: 6, md: 4 }} key={project.id}>

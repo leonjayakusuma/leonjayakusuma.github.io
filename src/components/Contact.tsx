@@ -1,14 +1,13 @@
 import { Container, Box, Typography, Button } from '@mui/material'
 import { Email, GitHub, LinkedIn } from '@mui/icons-material'
+import AnimatedHeading from '../utils/AnimatedHeading'
 
 export default function Contact() {
   return (
     <Box id="contact" component="section" sx={{ py: 10, px: { xs: 2, sm: 3 }, bgcolor: 'background.paper' }}>
       <Container maxWidth="md">
         <Box sx={{ textAlign: 'center' }}>
-          <Typography variant="h2" component="h2" sx={{ mb: 3, fontWeight: 700 }}>
-            Get In Touch
-          </Typography>
+          {AnimatedHeading({content: 'Get In Touch'})}
           <Typography variant="h6" sx={{ mb: 4, color: 'text.secondary' }}>
             I'm always open to discussing new projects, creative ideas, or opportunities 
             to be part of your vision.
@@ -63,4 +62,29 @@ export default function Contact() {
     </Box>
   )
 }
+
+// function AnimatedHeading({content}: {content: string}) {
+//   return <Box sx={{ textAlign: 'center', mb: 6 }}>
+//     <Typography
+//       variant="h2"
+//       component="h2"
+//       sx={{
+//         fontWeight: 700,
+//         display: 'inline-block',
+//         px: 3,
+//         py: 1,
+//         borderRadius: '5px',
+//         transition: 'all 0.3s ease',
+//         '&:hover': {
+//           color: 'primary.main',
+//           transform: 'scale(1.1)',
+//           cursor: 'pointer',
+//           backgroundColor: 'rgba(255, 255, 255, 1)',
+//         }
+//       }}
+//     >
+//       {content}
+//     </Typography>
+//   </Box>
+// }
 

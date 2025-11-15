@@ -1,8 +1,9 @@
-import { Container, Box, Typography, Grid } from '@mui/material'
+import { Container, Box, Grid } from '@mui/material'
 import { useMemo } from 'react'
 import { getSkillIcon } from '../../utils/skillIcons'
 import type { SkillCategory } from './interface'
 import SkillCategoryCard from './SkillCategoryCard'
+import AnimatedHeading from '../../utils/AnimatedHeading'
 
 export default function Skills() {
   const skillCategories: SkillCategory[] = useMemo(() => [
@@ -38,9 +39,7 @@ export default function Skills() {
   return (
     <Box id="skills" component="section" sx={{ py: 10, px: { xs: 2, sm: 3 }, bgcolor: 'background.paper' }}>
       <Container maxWidth="lg">
-        <Typography variant="h2" component="h2" sx={{ textAlign: 'center', mb: 6, fontWeight: 700 }}>
-          Skills & Technologies
-        </Typography>
+        {AnimatedHeading({content: 'Skills & Technologies'})}
         <Grid container spacing={3}>
           {skillCategories.map((category) => (
             <SkillCategoryCard key={category.title} category={category} />
