@@ -1,5 +1,5 @@
 import { Container, Box } from '@mui/material'
-import AnimatedHeading from '../../utils/AnimatedHeading'
+import AnimatedHeading from '../utils/AnimatedHeading'
 import type { Project } from './interface'
 import ProjectCard from './ProjectCard/ProjectCard'
 

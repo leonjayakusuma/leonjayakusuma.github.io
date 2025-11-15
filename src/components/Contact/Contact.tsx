@@ -1,6 +1,6 @@
 import { Container, Box, Typography } from '@mui/material'
 import { Email, GitHub, LinkedIn } from '@mui/icons-material'
-import AnimatedHeading from '../../utils/AnimatedHeading'
+import AnimatedHeading from '../utils/AnimatedHeading'
 import SocialButton from './SocialButton'
 
 export default function Contact() {

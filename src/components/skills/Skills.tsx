@@ -1,9 +1,9 @@
 import { Container, Box, Grid } from '@mui/material'
 import { useMemo } from 'react'
-import { getSkillIcon } from '../../utils/skillIcons'
+import { getSkillIcon } from '../utils/skillIcons'
 import type { SkillCategory } from './interface'
 import SkillCategoryCard from './SkillCategoryCard'
-import AnimatedHeading from '../../utils/AnimatedHeading'
+import AnimatedHeading from '../utils/AnimatedHeading'
 
 export default function Skills() {
   const skillCategories: SkillCategory[] = useMemo(() => [

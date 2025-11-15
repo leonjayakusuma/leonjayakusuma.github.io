@@ -1,5 +1,6 @@
 import { Container, Box, Typography, Button } from '@mui/material'
 import { useState, useEffect, useRef } from 'react'
+import { useScrollVisibility } from '../hooks/useScrollVisibility'
 
 // Constants
 const ROLES = ['Full Stack Developer', 'Software Engineer', 'Web Developer', 'UI/UX Enthusiast']
@@ -44,36 +45,6 @@ function useTypingEffect(roles: string[]) {
   }, [displayedRole, isDeleting, currentRoleIndex, roles])
 
   return displayedRole
-}
-
-// Custom hook for scroll-triggered visibility
-function useScrollVisibility<T extends HTMLElement = HTMLElement>(threshold = 0.1) {
-  const [isVisible, setIsVisible] = useState(false)
-  const ref = useRef<T>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          setIsVisible(entry.isIntersecting)
-        })
-      },
-      { threshold }
-    )
-
-    const currentRef = ref.current
-    if (currentRef) {
-      observer.observe(currentRef)
-    }
-
-    return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef)
-      }
-    }
-  }, [threshold])
-
-  return { isVisible, ref }
 }
 
 // Styles

@@ -1,38 +1,9 @@
 import { Container, Box, Typography } from '@mui/material'
-import { useState, useEffect, useRef } from 'react'
-import AnimatedHeading from '../utils/AnimatedHeading'
+import { useScrollVisibility } from '../hooks/useScrollVisibility'
+import AnimatedHeading from './utils/AnimatedHeading'
 
 const aboutText = "I'm a passionate developer who loves creating innovative solutions and bringing ideas to life through code. With a strong foundation in modern web technologies, I enjoy building user-friendly applications that make a difference."
 const aboutText2 = "When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community."
-
-function useScrollVisibility<T extends HTMLElement = HTMLElement>(threshold = 0.1) {
-  const [isVisible, setIsVisible] = useState(false)
-  const ref = useRef<T>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          setIsVisible(entry.isIntersecting)
-        })
-      },
-      { threshold }
-    )
-
-    const currentRef = ref.current
-    if (currentRef) {
-      observer.observe(currentRef)
-    }
-
-    return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef)
-      }
-    }
-  }, [threshold])
-
-  return { isVisible, ref }
-}
 
 export default function About() {
   return (
