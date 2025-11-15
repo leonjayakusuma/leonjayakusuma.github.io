@@ -27,13 +27,13 @@ export default function About() {
           </Typography>
         </Box>
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
-          <Typography variant="body1" sx={{ fontSize: '1.125rem', lineHeight: 1.8, color: 'text.secondary' }}>
+          <Typography variant="body1" sx={{ fontSize: '1.5rem', lineHeight: 1.8, color: 'text.secondary' }}>
             I'm a passionate developer who loves creating innovative solutions and 
             bringing ideas to life through code. With a strong foundation in modern 
             web technologies, I enjoy building user-friendly applications that make 
             a difference.
           </Typography>
-          <Typography variant="body1" sx={{ fontSize: '1.125rem', lineHeight: 1.8, color: 'text.secondary' }}>
+          <Typography variant="body1" sx={{ fontSize: '1.5rem', lineHeight: 1.8, color: 'text.secondary' }}>
             When I'm not coding, you can find me exploring new technologies, contributing 
             to open-source projects, or sharing knowledge with the developer community.
           </Typography>

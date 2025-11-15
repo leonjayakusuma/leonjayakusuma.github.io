@@ -100,7 +100,8 @@ const h1Styles = (isVisible: boolean) => ({
 const roleTypographyStyles = {
   mb: 2,
   color: 'text.secondary',
-  fontWeight: 400,
+  fontSize: '2.5rem',
+  fontWeight: 600,
   minHeight: '2.5rem'
 }
 
@@ -125,7 +126,7 @@ const buttonContainerStyles = {
 }
 
 // Sub-components
-function AnimatedHeading({ isVisible, ref }: { isVisible: boolean; ref: React.RefObject<HTMLHeadingElement | null> }) {
+function AnimatedHeadingHero({ isVisible, ref }: { isVisible: boolean; ref: React.RefObject<HTMLHeadingElement | null> }) {
   return (
     <Typography
       ref={ref}
@@ -138,7 +139,7 @@ function AnimatedHeading({ isVisible, ref }: { isVisible: boolean; ref: React.Re
   )
 }
 
-function TypingRole({ displayedRole }: { displayedRole: string }) {
+function TypingRoleHero({ displayedRole }: { displayedRole: string }) {
   return (
     <Typography variant="h4" sx={roleTypographyStyles}>
       {displayedRole}
@@ -213,14 +214,21 @@ export default function Hero() {
   return (
     <Box id="home" sx={heroBoxStyles}>
       <Container maxWidth="md">
-        <Box sx={{ textAlign: 'center' }}>
-          <AnimatedHeading isVisible={isHeadingVisible} ref={headingRef} />
-          <TypingRole displayedRole={displayedRole} />
+        <Box sx={{ 
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          textAlign: 'center',
+          gap: 3
+        }}>
+          <AnimatedHeadingHero isVisible={isHeadingVisible} ref={headingRef} />
+          <TypingRoleHero displayedRole={displayedRole} />
           <Typography 
             ref={descriptionRef}
             variant="h6" 
             sx={{ 
-              mb: 4, 
+              mb: 4,
+              fontSize: '1.5rem',
               color: 'text.secondary', 
               maxWidth: '600px', 
               mx: 'auto',
