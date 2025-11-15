@@ -1,5 +1,5 @@
 import { Container, Box, Typography, Button } from '@mui/material'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { useScrollVisibility } from '../hooks/useScrollVisibility'
 
 // Constants
