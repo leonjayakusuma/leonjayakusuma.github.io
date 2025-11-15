@@ -58,7 +58,7 @@ function AboutContent() {
         flexDirection: 'column', 
         gap: 3,
         opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : 'translateY(50px)',
+        transform: isVisible ? 'translateY(0)' : 'translateY(90px)',
         transition: 'opacity 2s ease-out, transform 2s ease-out'
       }}
     >
