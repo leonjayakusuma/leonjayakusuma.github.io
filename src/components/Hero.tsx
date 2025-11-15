@@ -47,9 +47,9 @@ function useTypingEffect(roles: string[]) {
 }
 
 // Custom hook for scroll-triggered visibility
-function useScrollVisibility(threshold = 0.1) {
+function useScrollVisibility<T extends HTMLElement = HTMLElement>(threshold = 0.1) {
   const [isVisible, setIsVisible] = useState(false)
-  const ref = useRef<HTMLHeadingElement>(null)
+  const ref = useRef<T>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -93,7 +93,7 @@ const h1Styles = (isVisible: boolean) => ({
   mb: 2,
   color: 'text.primary',
   opacity: isVisible ? 1 : 0,
-  transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+  transform: isVisible ? 'translateY(0)' : 'translateY(-120px)',
   transition: 'opacity 1.5s ease-out, transform 1.5s ease-out'
 })
 
@@ -147,9 +147,17 @@ function TypingRole({ displayedRole }: { displayedRole: string }) {
   )
 }
 
-function ActionButtons() {
+function ActionButtons({ isVisible, ref }: { isVisible: boolean; ref: React.RefObject<HTMLDivElement | null> }) {
   return (
-    <Box sx={buttonContainerStyles}>
+    <Box 
+      ref={ref}
+      sx={{
+        ...buttonContainerStyles,
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0)' : 'translateY(90px)',
+        transition: 'opacity 1.5s ease-out, transform 1.5s ease-out'
+      }}
+    >
       <Button
         href="#contact"
         variant="contained"
@@ -198,18 +206,32 @@ function ActionButtons() {
 // Main component
 export default function Hero() {
   const displayedRole = useTypingEffect(ROLES)
-  const { isVisible, ref } = useScrollVisibility()
+  const { isVisible: isHeadingVisible, ref: headingRef } = useScrollVisibility<HTMLHeadingElement>()
+  const { isVisible: isDescriptionVisible, ref: descriptionRef } = useScrollVisibility<HTMLParagraphElement>()
+  const { isVisible: isButtonsVisible, ref: buttonsRef } = useScrollVisibility<HTMLDivElement>()
 
   return (
     <Box id="home" sx={heroBoxStyles}>
       <Container maxWidth="md">
         <Box sx={{ textAlign: 'center' }}>
-          <AnimatedHeading isVisible={isVisible} ref={ref} />
+          <AnimatedHeading isVisible={isHeadingVisible} ref={headingRef} />
           <TypingRole displayedRole={displayedRole} />
-          <Typography variant="h6" sx={{ mb: 4, color: 'text.secondary', maxWidth: '600px', mx: 'auto' }}>
+          <Typography 
+            ref={descriptionRef}
+            variant="h6" 
+            sx={{ 
+              mb: 4, 
+              color: 'text.secondary', 
+              maxWidth: '600px', 
+              mx: 'auto',
+              opacity: isDescriptionVisible ? 1 : 0,
+              transform: isDescriptionVisible ? 'translateY(0)' : 'translateY(90px)',
+              transition: 'opacity 1.5s ease-out, transform 1.5s ease-out'
+            }}
+          >
             I build beautiful and functional web applications with modern technologies
           </Typography>
-          <ActionButtons />
+          <ActionButtons isVisible={isButtonsVisible} ref={buttonsRef} />
         </Box>
       </Container>
     </Box>
