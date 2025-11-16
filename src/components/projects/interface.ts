@@ -7,4 +7,5 @@ export interface Project {
     technologies?: string[]
     demoUrl?: string
     githubUrl?: string
+    imageUrl?: string
   }

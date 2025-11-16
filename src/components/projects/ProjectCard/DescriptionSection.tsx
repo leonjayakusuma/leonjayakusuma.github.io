@@ -15,13 +15,13 @@ export default function DescriptionSection({ project }: { project: Project }) {
           <Box component="ul" sx={{ pl: 2, mb: 2, color: 'text.secondary' }}>
             {project.bulletPoints.map((point, index) => (
               <Typography key={index} component="li" variant="body2" sx={{ mb: 0.5 }}>
-                - {point}
+                {point}
               </Typography>
             ))}
           </Box>
         )}
         {project.dateRange && (
-          <Typography variant="body2" sx={{ color: 'text.secondary', mb: 2 }}>
+          <Typography variant="body2" sx={{ color: 'text.secondary', mb: 2, textAlign: 'right' }}>
             {project.dateRange}
           </Typography>
         )}

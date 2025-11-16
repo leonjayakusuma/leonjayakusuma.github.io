@@ -1,6 +1,46 @@
-import { Box, Card, Typography, Grid } from "@mui/material";
+import { Box, Card, Grid, Link } from "@mui/material";
 
-export default function ImageSection() {
+interface ImageSectionProps {
+  imageUrl?: string;
+  alt?: string;
+  linkUrl?: string;
+}
+
+export default function ImageSection({ imageUrl, alt = "Project thumbnail", linkUrl }: ImageSectionProps) {
+  const imageContent = imageUrl ? (
+    <Box
+      component="img"
+      src={imageUrl}
+      alt={alt}
+      sx={{
+        width: '100%',
+        height: '100%',
+        objectFit: 'contain',
+        display: 'block',
+      }}
+      loading="lazy"
+      decoding="async"
+    />
+  ) : (
+    <Box
+      sx={{
+        height: '100%',
+        background: 'linear-gradient(135deg, #14b8a6 0%, #0d9488 100%)',
+        display: 'flex',
+        flexDirection: 'column',
+        p: 3,
+        color: 'white'
+      }}
+    >
+      {/* Placeholder content when no image */}
+      <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <Box sx={{ textAlign: 'center', opacity: 0.7 }}>
+          No image available
+        </Box>
+      </Box>
+    </Box>
+  );
+
   return (
     <Grid size={{ xs: 12, md: 6 }}>
       <Card
@@ -13,34 +53,29 @@ export default function ImageSection() {
           boxShadow: '0 10px 40px rgba(0, 0, 0, 0.3)',
           '&:hover': {
             transform: 'translateY(-4px)',
-            boxShadow: '0 20px 60px rgba(0, 0, 0, 0.4)',
+            boxShadow: '0 20px 60px rgba(255, 255, 255, 0.4)',
             transition: 'transform 0.3s ease, boxShadow 0.3s ease',
+            cursor: 'pointer',
           }
         }}
       >
-        <Box
-          sx={{
-            height: '100%',
-            background: 'linear-gradient(135deg, #14b8a6 0%, #0d9488 100%)',
-            display: 'flex',
-            flexDirection: 'column',
-            p: 3,
-            color: 'white'
-          }}
-        >
-          <Box sx={{ display: 'flex', gap: 2, mb: 3, fontSize: '0.875rem' }}>
-            <Typography>home</Typography>
-            <Typography>about</Typography>
-          </Box>
-          <Box sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-            <Typography variant="h3" sx={{ fontWeight: 700, mb: 2 }}>
-              the <Box component="span" sx={{ color: '#ec4899' }}>talent</Box>
-            </Typography>
-            <Typography variant="body2" sx={{ opacity: 0.9 }}>
-              Finding the right people and building high performing teams can be hard. We provide the tools and insights needed to build dynamic teams made up of global talent.
-            </Typography>
-          </Box>
-        </Box>
+        {linkUrl && linkUrl !== '#' ? (
+          <Link
+            href={linkUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{
+              display: 'block',
+              width: '100%',
+              height: '100%',
+              textDecoration: 'none',
+            }}
+          >
+            {imageContent}
+          </Link>
+        ) : (
+          imageContent
+        )}
       </Card>
     </Grid>
   )

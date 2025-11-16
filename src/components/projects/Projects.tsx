@@ -2,42 +2,53 @@ import { Container, Box } from '@mui/material'
 import AnimatedHeading from '../utils/AnimatedHeading'
 import type { Project } from './interface'
 import ProjectCard from './ProjectCard/ProjectCard'
+import IFFAThumbnail from '../../assets/projects/IFFA/IFFA_thumbnail.png'
+import MyTeamThumbnail from '../../assets/projects/FrontendMentor/Myteam/thumbnail.png'
+import SoilThumbnail from '../../assets/projects/Soil/soil_thumbnail.png'
 
 const projects: Project[] = [
   {
     id: 1,
-    title: 'Frontend Mentor - MyTeam Multi-Page Website',
-    description: 'My first full-scale website that I deployed. This is a website for an example service-based company that offers coaching services to build dynamic teams made up of global talent.',
+    title: 'IFFA Awards - Movie Nominations Website',
+    description: ' Created a Movie Nominations Website featuring movie highlights, top nominations, and movie finalist showcase for International Film Festivals Australia.',
     bulletPoints: [
-      'Part of Frontend Mentor Projects',
-      'Built with Tailwind CSS',
-      'Built with Next.js'
+      'Worked with Figma, Vite, React, Typescript, Express, MySQL, and Firebase as tech stack.',
+      'Built a movie nominations website with a modern and responsive design.',
+      'Managed a team of five engineers using Jira, Git, and GitHub.'
     ],
-    dateRange: 'Nov 2023 - Dec 2023',
-    technologies: ['React', 'Next.js', 'Tailwind CSS', 'TypeScript', 'Frontend Development'],
-    demoUrl: '#',
-    githubUrl: '#'
+    dateRange: 'Aug 2024 - Jan 2025',
+    technologies: ['React', 'Next.js', 'Tailwind CSS', 'TypeScript', 'Express', 'MySQL', 'Firebase'],
+    demoUrl: 'https://iffa.com.au/',
+    githubUrl: '#',
+    imageUrl: IFFAThumbnail
   },
   {
     id: 2,
-    title: 'Project Title',
-    description: 'A brief description of the project and what technologies were used.',
-    bulletPoints: ['Feature 1', 'Feature 2', 'Feature 3'],
-    dateRange: 'Jan 2024 - Feb 2024',
-    technologies: ['React', 'TypeScript'],
+    title: 'SOIL Organic Foods - Ecommerce Website',
+    description: 'Full stack web application for a whole-foods supermarket, featuring a modern and responsive design with a clean and intuitive user interface.',
+    bulletPoints: ['Search bar to search for products', 'Shopping Cart and Checkout Page', 'Profile Management Feature', 'Meal Planning Functionality'],
+    dateRange: 'Feb 2024 - Jun 2024',
+    technologies: ['Vite', 'React.js', 'React Hooks', 'GraphQL', 'Sequelize.js', 'TypeScript', 'Front-end Development', 'Back-End Web Development', 'Node.js'],
     demoUrl: '#',
-    githubUrl: '#'
+    githubUrl: '#',
+    imageUrl: SoilThumbnail
   },
   {
     id: 3,
-    title: 'Project Title',
-    description: 'A brief description of the project and what technologies were used.',
-    bulletPoints: ['Feature 1', 'Feature 2'],
-    dateRange: 'Mar 2024 - Apr 2024',
-    technologies: ['React', 'Node.js'],
-    demoUrl: '#',
-    githubUrl: '#'
-  }
+    title: 'Frontend Mentor - MyTeam Multi-Page Website',
+    description: 'Created a multi-page website for a fictional company called MyTeam. The website features a modern and responsive design with a clean and intuitive user interface.',
+    bulletPoints: [
+      'Worked with Figma, Vite, React, Typescript, and Tailwind CSS as tech stack.',
+      'Built a multi-page website with a modern and responsive design.',
+      'Deployed the website using Vercel.'
+    ],
+    dateRange: 'Nov 2023 - Dec 2023',
+    technologies: ['Next.js', 'React.js', 'Tailwind CSS', 'TypeScript'],
+    demoUrl: 'https://frontend-mentor-xi-roan.vercel.app/myteam-multi-page-website',
+    githubUrl: '#',
+    imageUrl: MyTeamThumbnail
+  },
+  
 ]
 
 

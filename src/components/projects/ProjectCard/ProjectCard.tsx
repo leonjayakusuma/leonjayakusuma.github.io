@@ -28,7 +28,7 @@ export default function ProjectCard({ project, isOdd }: { project: Project, isOd
           transition: 'opacity 1.5s ease-out, transform 1.5s ease-out'
         }}
       >
-        <ImageSection />
+        <ImageSection imageUrl={project.imageUrl} alt={project.title} linkUrl={project.demoUrl} />
         <DescriptionSection project={project} />
       </Grid>
     )
@@ -53,7 +53,7 @@ export default function ProjectCard({ project, isOdd }: { project: Project, isOd
         }}
       >
         <DescriptionSection project={project} />
-        <ImageSection />
+        <ImageSection imageUrl={project.imageUrl} alt={project.title} linkUrl={project.demoUrl} />
       </Grid>
     )
   }
