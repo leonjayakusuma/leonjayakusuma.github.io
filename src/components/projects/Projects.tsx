@@ -29,7 +29,7 @@ const projects: Project[] = [
     bulletPoints: ['Search bar to search for products', 'Shopping Cart and Checkout Page', 'Profile Management Feature', 'Meal Planning Functionality'],
     dateRange: 'Feb 2024 - Jun 2024',
     technologies: ['Vite', 'React.js', 'React Hooks', 'GraphQL', 'Sequelize.js', 'TypeScript', 'Front-end Development', 'Back-End Web Development', 'Node.js'],
-    demoUrl: '#',
+    demoUrl: 'https://github.com/leonjayakusuma/SOIL',
     githubUrl: '#',
     imageUrl: SoilThumbnail
   },
@@ -48,7 +48,7 @@ const projects: Project[] = [
     githubUrl: '#',
     imageUrl: MyTeamThumbnail
   },
-  
+
 ]
 
 
@@ -56,7 +56,7 @@ export default function Projects() {
   return (
     <Box id="projects" component="section" sx={{ py: 10, px: { xs: 2, sm: 3 }, bgcolor: 'background.default' }}>
       <Container maxWidth="lg">
-        {AnimatedHeading({content: 'Featured Projects'})}
+        {AnimatedHeading({ content: 'Featured Projects' })}
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
           {projects.map((project) => {
             const isOdd = project.id % 2 === 1
